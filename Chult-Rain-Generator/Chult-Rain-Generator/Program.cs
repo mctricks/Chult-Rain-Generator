@@ -10,7 +10,16 @@ namespace Chult_Rain_Generator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            RainStateMachine machine = new RainStateMachine("Clear");
+
+            Console.WriteLine(machine.CurrentState.Name);
+
+            for(int i = 0; i < 25; i++)
+            {
+                machine.Update();
+
+                Console.WriteLine(machine.CurrentState.Name);
+            }
         }
     }
 }
